@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Math Game</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    height:100vh;
+    overflow:hidden;
+}
+
+/* background */
+.bg{
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:
+        linear-gradient(135deg,
+            rgba(10,20,60,0.85),
+            rgba(0,0,0,0.7)),
+        url('https://pasajeen.com/wp-content/uploads/2011/03/2423223.jpg');
+    background-size:cover;
+    background-position:center;
+    transform:scale(1.05);
+}
+
+/* floating symbols */
+.symbol{
+    position:absolute;
+    font-size:70px;
+    color:rgba(255,255,255,0.07);
+    animation:float 7s infinite ease-in-out;
+    pointer-events:none;
+}
+
+@keyframes float{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-35px);}
+}
+
+.s1{top:8%;left:8%;}
+.s2{top:18%;right:10%;}
+.s3{bottom:15%;left:15%;}
+.s4{bottom:18%;right:12%;}
+.s5{top:55%;left:5%;}
+.s6{top:65%;right:5%;}
+
+/* center */
+.overlay{
+    position:relative;
+    width:100%;
+    height:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* MAIN CARD (ใหญ่ขึ้น) */
+.card{
+    width:90%;
+    max-width:1000px;   /* 👈 ขยายตรงนี้ */
+    
+    padding:70px 60px;  /* 👈 เพิ่มพื้นที่ */
+    
+    border-radius:35px;
+
+    background:rgba(255,255,255,0.12);
+    backdrop-filter:blur(25px);
+
+    border:1px solid rgba(255,255,255,0.2);
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,0.6),
+        inset 0 0 40px rgba(255,255,255,0.05);
+
+    text-align:center;
+
+    position:relative;
+}
+
+/* glow border */
+.card::before{
+    content:"";
+    position:absolute;
+    inset:-2px;
+    border-radius:35px;
+    background:linear-gradient(45deg,#00d4ff,#7b2ff7,#ff00ff);
+    z-index:-1;
+    filter:blur(20px);
+    opacity:0.4;
+}
+
+/* title */
+h1{
+    font-size:80px;   /* 👈 ใหญ่ขึ้น */
+    color:white;
+    text-shadow:0 10px 30px rgba(0,0,0,0.7);
+}
+
+p{
+    font-size:34px;
+    color:#ffe600;
+    margin-top:10px;
+    font-weight:bold;
+}
+
+.desc{
+    margin-top:20px;
+    font-size:20px;
+    color:white;
+    opacity:0.8;
+    line-height:1.6;
+}
+
+/* button */
+button{
+    margin-top:40px;
+    padding:22px 90px;
+    font-size:34px;
+    font-weight:bold;
+    border:none;
+    border-radius:30px;
+    cursor:pointer;
+    color:white;
+
+    background:linear-gradient(45deg,#00d4ff,#7b2ff7);
+
+    box-shadow:
+        0 0 20px #00d4ff,
+        0 0 40px #7b2ff7;
+
+    transition:0.3s;
+}
+
+button:hover{
+    transform:scale(1.08);
+    box-shadow:
+        0 0 30px #00d4ff,
+        0 0 80px #7b2ff7;
+}
+
+/* footer */
+.footer{
+    margin-top:30px;
+    font-size:14px;
+    color:white;
+    opacity:0.7;
+}
+
+/* mobile */
+@media(max-width:768px){
+    h1{font-size:48px;}
+    button{font-size:24px;padding:18px 50px;}
+    .card{padding:40px 25px;}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="bg"></div>
+
+<!-- floating -->
+<div class="symbol s1">➕</div>
+<div class="symbol s2">➖</div>
+<div class="symbol s3">✖️</div>
+<div class="symbol s4">➗</div>
+<div class="symbol s5">π</div>
+<div class="symbol s6">√</div>
+
+<div class="overlay">
+
+    <div class="card">
+
+        <h1>🧮 Math Game</h1>
+        <p>Math Challenge PRO</p>
+
+        <div class="desc">
+            เกมฝึกคณิตศาสตร์แบบอินเตอร์แอคทีฟ<br>
+            มีหลายระดับความยาก + ระบบเกมเต็มรูปแบบ<br>
+            พร้อมท้าทายสมองของคุณ 🚀
+        </div>
+
+        <button onclick="window.location.href='about.html'">
+            ▶ เริ่มเกม
+        </button>
+
+        <div class="footer">
+            🎮 Ready to challenge your brain?
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

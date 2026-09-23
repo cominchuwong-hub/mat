@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>เลือกระดับ</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Arial';
+}
+
+body{
+    height:100vh;
+    background:
+        linear-gradient(rgba(71, 131, 243, 0.4),rgba(0,0,0,0.4)),
+        url('https://pasajeen.com/wp-content/uploads/2011/03/2423223.jpg');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.container{
+    text-align:center;
+    color:rgb(36, 178, 235);
+}
+
+h1{
+    font-size:60px;
+    margin-bottom:20px;
+    text-shadow:2px 2px 10px black;
+}
+
+p{
+    margin-bottom:40px;
+    font-size:22px;
+    color:#ffe600;
+}
+
+.btn-group{
+    display:flex;
+    gap:30px;
+    justify-content:center;
+}
+
+.level-btn{
+    padding:25px 60px;
+    font-size:30px;
+    font-weight:bold;
+    border:none;
+    border-radius:20px;
+    cursor:pointer;
+    color:white;
+    transition:0.3s;
+    box-shadow:0 0 15px rgba(0,0,0,0.4);
+}
+
+.primary{
+    background:linear-gradient(45deg,#00d4ff,#2ecc71);
+}
+
+.secondary{
+    background:linear-gradient(45deg,#7b2ff7,#ff4b2b);
+}
+
+.level-btn:hover{
+    transform:scale(1.1);
+    box-shadow:0 0 25px white;
+}
+
+.back{
+    margin-top:40px;
+    display:block;
+    color:white;
+    text-decoration:none;
+    font-size:18px;
+    opacity:0.8;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🎯 เลือกระดับความยาก</h1>
+    <p>เลือกโหมดการเล่นเพื่อเริ่มเกม</p>
+
+    <div class="btn-group">
+
+        <button class="level-btn primary"
+         onclick="window.location.href='about2.html'">
+            📘 ประถม
+        </button>
+
+        <button class="level-btn secondary"
+         onclick="window.location.href='about3.html'">
+            📗 มัธยม
+        </button>
+
+    </div>
+
+    <a class="back" href="index.html">⬅ กลับหน้าหลัก</a>
+
+</div>
+
+</body>
+</html>
